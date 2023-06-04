@@ -8,6 +8,7 @@ const Artwork = ({
   theme,
   width,
   height,
+  viewTransitionName,
   src
 }) => (
   <>
@@ -15,6 +16,7 @@ const Artwork = ({
       <AspectRatioBox aspectRatio={width / height}>
         <IntroImage
           src={src}
+          viewTransitionName={viewTransitionName}
           width={width}
           height={height} />
       </AspectRatioBox>

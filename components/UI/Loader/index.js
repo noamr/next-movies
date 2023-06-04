@@ -1,5 +1,6 @@
 
 import clsx from 'clsx';
+import { SuspendViewTransition } from 'use-view-transitions/next';
 
 const Loading = () => (
   <>
@@ -43,6 +44,7 @@ const Loader = ({
           className
         )
       }>
+      <SuspendViewTransition />
       <Loading />
     </div>
     <style jsx>{`

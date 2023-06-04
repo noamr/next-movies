@@ -12,6 +12,7 @@ const TheGenresSection = ({
       <div className='the-genres'>
         {genres.map(genre => (
           <GenreLink
+            viewTransitionName={`genre-${genre.id}`}
             key={genre.id}
             genre={genre} />
         ))}

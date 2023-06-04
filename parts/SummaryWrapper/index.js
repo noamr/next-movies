@@ -1,7 +1,4 @@
 
-
-import LazyLoad from 'react-lazyload';
-
 import withTheme from 'utils/hocs/withTheme';
 
 const SummaryWrapper = ({
@@ -9,12 +6,9 @@ const SummaryWrapper = ({
   children
 }) => (
   <>
-    {/* TODO: double check if we really need LazyLoad */}
-    <LazyLoad height={500}>
-      <div className='summary-wrapper'>
-        {children}
-      </div>
-    </LazyLoad>
+    <div className='summary-wrapper'>
+      {children}
+    </div>
     <style jsx>{`
       .summary-wrapper {
         display: grid;

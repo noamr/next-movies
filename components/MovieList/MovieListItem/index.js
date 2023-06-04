@@ -1,6 +1,4 @@
 
-import LazyLoad from 'react-lazyload';
-
 import PosterLink from 'components/PosterLink';
 import Scenery from 'components/Scenery';
 import DetailsPanelWrapper from 'components/DetailsPanelWrapper';
@@ -10,21 +8,21 @@ import LINKS from 'utils/constants/links';
 import CLASS_NAMES from 'utils/constants/class-names';
 import { W342H513 } from 'config/image-sizes';
 import QUERY_PARAMS from 'utils/constants/query-params';
-
+import {CurrentLinkContext, PrevLinkContext} from 'contexts/current-link-context';
+import { useContext } from 'react';
 const POSTER_LINK_CLASS_NAME = 'poster-link';
 const POSTER_TITLE_CLASS_NAME = 'poster-title-color';
 const RATING_INFO_CLASS_NAME = 'rating-info-color';
 
-const MovieListItem = ({
+function MovieListItem({
   theme,
   movie,
   baseUrl,
   fetchpriority
-}) => (
-  <>
-    <LazyLoad
-      height={200}
-      offset={1400}>
+}) {
+  const currentLinkID = useContext(CurrentLinkContext);
+  const prevLinkID = useContext(PrevLinkContext);
+  return <>
       <PosterLink
         className={POSTER_LINK_CLASS_NAME}
         href={{
@@ -38,20 +36,23 @@ const MovieListItem = ({
           width={W342H513.WIDTH}
           height={W342H513.HEIGHT}
           fetchpriority={fetchpriority}
+          viewTransitionName={(currentLinkID == movie.id || prevLinkID == movie.id) ? `movie-${movie.id}` : 'none'}
           src={`${baseUrl}w${W342H513.WIDTH}${movie.poster_path}`} />
         <DetailsPanelWrapper theme={theme}>
           <PosterTitle
+            id={movie.id}
             theme={theme}
             className={POSTER_TITLE_CLASS_NAME}>
             {movie.title}
           </PosterTitle>
           <RatingInfo
+            id={movie.id}
             className={RATING_INFO_CLASS_NAME}
+            viewTransitionName={(currentLinkID == movie.id || prevLinkID == movie.id) ? `rating-${movie.id}` : 'none'}
             voteAverage={movie.vote_average}
             tooltip={`${movie.vote_average} average rating on ${movie.vote_count} votes`} />
         </DetailsPanelWrapper>
       </PosterLink>
-    </LazyLoad>
     <style jsx>{`
       :global(.${POSTER_LINK_CLASS_NAME}:hover .${CLASS_NAMES.IMAGE_LOADING_PLACEHOLDER}) {
         box-shadow: ${theme.shadows[0]};
@@ -67,6 +68,6 @@ const MovieListItem = ({
       }
     `}</style>
   </>
-);
+}
 
 export default MovieListItem;

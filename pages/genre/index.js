@@ -89,6 +89,7 @@ const Genre = () => {
         </Head>
         <Header
           title={general.selectedMenuItemName}
+          viewTransitionName={`genre-${genreId}`}
           subtitle='movies' />
         <SortBy
           value={sortByOptionValue}

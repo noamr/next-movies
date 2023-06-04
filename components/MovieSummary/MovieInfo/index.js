@@ -20,12 +20,14 @@ const MovieInfo = ({
       <Header
         size={SIZE_TYPES.LARGE}
         title={movie.title}
+        viewTransitionName={`title-${movie.id}`}
         subtitle={movie.tagline} />
       <BasicsSection
         className='basic-section-bottom-margin'
         voteAverage={movie.vote_average}
         spokenLanguages={movie.spoken_languages}
         runtime={movie.runtime}
+        id={movie.id}
         releaseDate={movie.release_date} />
       <TheGenresSection
         className='the-genres-section-bottom-margin'

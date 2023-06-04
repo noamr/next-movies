@@ -7,12 +7,13 @@ import Tooltip from 'components/UI/Tooltip';
 
 const RatingInfo = ({
   className,
+  viewTransitionName,
   voteAverage,
   tooltip
 }) => (
   <>
     <div className={clsx('rating-info', className)}>
-      <Rating voteAverage={voteAverage} />
+      <Rating voteAverage={voteAverage} viewTransitionName={viewTransitionName} />
       <Tooltip className='tooltip-position tooltip-show'>{tooltip}</Tooltip>
     </div>
     <style jsx>{`

@@ -6,6 +6,7 @@ const GradientImageWrapper = ({
   className = '',
   children,
   overlayEnabled,
+  viewTransitionName,
   ...rest
 }) => (
   <>

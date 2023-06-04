@@ -167,4 +167,8 @@ export default css.global`
   .${CLASS_NAMES.INVISIBLE} {
     visibility: hidden;
   }
+
+  :root {
+    view-transition-name: none;
+  }
 `;

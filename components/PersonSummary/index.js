@@ -10,6 +10,7 @@ const PersonSummary = ({
 }) => (
   <SummaryWrapper>
     <PersonArtwork
+      viewTransitionName={`person-${person.id}`}
       width={W780H1170.WIDTH}
       height={W780H1170.HEIGHT}
       src={`${baseUrl}w${W780H1170.WIDTH}${person.profile_path}`} />

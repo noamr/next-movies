@@ -15,6 +15,7 @@ const Scenery = ({
   className = '',
   width,
   height,
+  viewTransitionName,
   fetchpriority,
   ...rest
 }) => (
@@ -25,6 +26,7 @@ const Scenery = ({
       width={width}
       height={height}
       fetchpriority={fetchpriority}
+      viewTransitionName={viewTransitionName}
       gradientOverlayEnabled
       overlayClass={overlayClass}
       className={clsx(CLASS_NAME, className)}

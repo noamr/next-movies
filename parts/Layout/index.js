@@ -36,7 +36,7 @@ const Layout = ({
        * Could use SearchBar and DarkModeToggle just once by CSS tricks.
        * If we updated the layout (similar to the one in the Material Music project) from a designing perspective we could avoid duplicating children.
        */}
-      <MediaContextProvider>
+      <MediaContextProvider disableDynamicMediaQueries>
         <Media at='sm'>
           <MainWrapper theme={theme}>
             <AppHeader />

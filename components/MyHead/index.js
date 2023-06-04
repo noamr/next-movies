@@ -11,6 +11,7 @@ const MyHead = ({ children }) => (
     {/* <link rel='preconnect' href='https://content-autofill.googleapis.com' /> */}
     <link rel='preload' href={LOGO_IMAGE_PATH} as='image' media='(min-width: 80em)' />
     <link rel='preload' href={DARK_TMDB_IMAGE_PATH} as='image' media='(prefers-color-scheme: dark) and (min-width: 80em)' />
+    <meta name="view-transition" content="same-origin"></meta>
     <link rel='preload' href={LIGHT_TMDB_IMAGE_PATH} as='image' media='(prefers-color-scheme: light) and (min-width: 80em)' />
     {/* MEMO: inspired by https://web.dev/optimize-lcp/#establish-third-party-connections-early */}
     {/* <link rel='dns-prefetch' href='https://image.tmdb.org' />

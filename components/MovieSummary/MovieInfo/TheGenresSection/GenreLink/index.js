@@ -8,7 +8,8 @@ import QUERY_PARAMS from 'utils/constants/query-params';
 
 const GenreLink = ({
   theme,
-  genre
+  genre,
+  viewTransitionName
 }) => (
   <>
     <Link
@@ -25,7 +26,7 @@ const GenreLink = ({
           fill='currentColor'
           width='1.25em'
           style={{marginRight: '4px'}} />
-        {genre.name}
+        <span style={{viewTransitionName: viewTransitionName || "none"}}>{genre.name}</span>
       </a>
     </Link>
     <style jsx>{`

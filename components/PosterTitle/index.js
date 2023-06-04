@@ -1,18 +1,23 @@
 
 
 import clsx from 'clsx';
-
+import {CurrentLinkContext, PrevLinkContext} from 'contexts/current-link-context';
+import { useContext } from 'react';
 const CLASS_NAME = 'poster-title';
 
-const PosterTitle = ({
+function PosterTitle({
   theme,
   className,
   children,
+  id,
   ...rest
-}) => (
-  <>
+}) {
+  const currentLinkID = useContext(CurrentLinkContext);
+  const prevLinkID = useContext(PrevLinkContext);
+  return <>
     <h2
       className={clsx(CLASS_NAME, className)}
+      style={{viewTransitionName: (currentLinkID === id || prevLinkID === id) ? `title-${id}` : 'none'}}
       {...rest}>
       {children}
     </h2>
@@ -27,6 +32,6 @@ const PosterTitle = ({
       }
     `}</style>
   </>
-);
+};
 
 export default PosterTitle;

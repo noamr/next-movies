@@ -8,10 +8,11 @@ const RATING_VALUE_CLASS_NAME = 'rating-value-side-margin';
 
 const Rating = ({
   voteAverage,
+  viewTransitionName,
   withValue
 }) => (
   <>
-    <div className={CLASS_NAMES.RATING}>
+    <div className={CLASS_NAMES.RATING} style={{viewTransitionName}}>
       <ReactStars
         edit={false}
         size={24}

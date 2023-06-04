@@ -9,11 +9,13 @@ const BasicsSection = ({
   voteAverage,
   spokenLanguages,
   runtime,
-  releaseDate
+  releaseDate,
+  id
 }) => (
   <>
     <div className={clsx('basics-section', className)}>
       <Rating
+        viewTransitionName={`rating-${id}`}
         withValue
         voteAverage={voteAverage} />
       <LanguagesRuntimeRelease

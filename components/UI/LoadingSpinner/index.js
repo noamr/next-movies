@@ -1,3 +1,4 @@
+import { SuspendViewTransition } from "use-view-transitions/next"
 
 const LoadingSpinner = ({
   width = 40,
@@ -5,6 +6,7 @@ const LoadingSpinner = ({
   ...rest
 }) => (
   <>
+    <SuspendViewTransition />
     <svg
       x='0px'
       y='0px'

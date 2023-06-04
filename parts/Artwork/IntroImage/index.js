@@ -8,6 +8,7 @@ import { NOTHING_PLACEHOLDER_IMAGE_PATH } from 'utils/constants/image-paths';
 
 const IntroImage = ({
   className,
+  viewTransitionName,
   ...rest
 }) => (
   <>
@@ -16,6 +17,7 @@ const IntroImage = ({
       className={clsx('intro-image', className)}
       loadingUI={<ImageLoadingPlaceholder />}
       placeholderPath={NOTHING_PLACEHOLDER_IMAGE_PATH}
+      viewTransitionName={viewTransitionName}
       {...rest} />
     <style jsx>{`
       :global(.intro-image) {

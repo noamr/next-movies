@@ -1,7 +1,5 @@
 
 
-import LazyLoad from 'react-lazyload';
-
 import Scenery from 'components/Scenery';
 import PosterTitle from 'components/PosterTitle';
 import {
@@ -26,9 +24,6 @@ const ChooseImageItem = ({
   ...rest
 }) => (
   <>
-    <LazyLoad
-      height={200}
-      offset={200}>
       <button
         className={SCENERY_CONTAINER_CLASS_NAME}
         {...rest}>
@@ -49,7 +44,6 @@ const ChooseImageItem = ({
         theme={theme}>
         {movie.title}
       </PosterTitle>
-    </LazyLoad>
     <style jsx>{`
       .${SCENERY_CONTAINER_CLASS_NAME} {
         position: relative;

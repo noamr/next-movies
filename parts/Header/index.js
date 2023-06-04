@@ -8,10 +8,11 @@ import SIZE_TYPES from 'utils/constants/size-types';
 const Title = ({
   theme,
   size = SIZE_TYPES.MEDIUM,
-  children
+  children,
+  viewTransitionName
 }) => (
   <>
-    <h1 className='title'>{children}</h1>
+    <h1 className='title'><span>{children}</span></h1>
     <style jsx>{`
       .title {
         margin-bottom: 0.5rem;
@@ -21,6 +22,11 @@ const Title = ({
         line-height: ${size === SIZE_TYPES.LARGE ? '1.2' : '1'};
         text-transform: uppercase;
         letter-spacing: -0.5px;
+        transform: rotate(360deg);
+      }
+
+      .title span {
+        view-transition-name: ${viewTransitionName || "none"};
       }
     
       @media ${theme.mediaQueries.medium} {
@@ -69,6 +75,7 @@ const Header = ({
   subtitle,
   size,
   className,
+  viewTransitionName,
   ...rest
 }) => (
   <>
@@ -77,6 +84,7 @@ const Header = ({
       className={clsx('header', className)}>
       <Title
         theme={theme}
+        viewTransitionName={viewTransitionName}
         size={size}>
         {title}
       </Title>

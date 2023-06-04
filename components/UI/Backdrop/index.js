@@ -37,7 +37,6 @@ const Backdrop = ({
         left: 0;
         background-color: var(--palette-background-backdrop);
         -webkit-tap-highlight-color: transparent;
-        transition: opacity ${theme.transitions.duration.leavingScreen}ms ${theme.transitions.easing.easeInOut} 0ms;
       }
 
       .${OPENED_CLASS_NAME} {

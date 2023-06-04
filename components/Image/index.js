@@ -12,6 +12,7 @@ const Image = ({
   gradientOverlayEnabled,
   overlayClass,
   fetchpriority,
+  viewTransitionName,
   alt,
   ...rest
 }) => {
@@ -31,6 +32,7 @@ const Image = ({
       {!loaded && loadingUI}
       <GradientImageWrapper
         className={overlayClass}
+        style={{viewTransitionName}}
         overlayEnabled={gradientOverlayEnabled}>
         <img
           className={clsx('img', className)}
